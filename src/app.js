@@ -10,6 +10,7 @@ window.addEventListener('resize', pickUpHeightAndWidth)
 const randomPosition = () => {
   if (document.querySelector('#fly')) {
     document.querySelector('#fly').remove()
+    document.querySelector('#v1').src = './src/assets/coracao_vazio.png'
   }
 
   let positionX = Math.floor(Math.random() * width) - 90
