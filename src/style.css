@@ -50,7 +50,7 @@ body {
   body {
     background-image: url('./assets/interior-casa.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
   }
   .board {
     width: 100%;
