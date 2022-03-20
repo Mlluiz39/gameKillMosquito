@@ -46,6 +46,10 @@ body {
   font-weight: bold;
 }
 
+.time p {
+ margin-left: 10px;
+}
+
 @media (max-width: 600px) {
   body {
     background-image: url('./assets/interior-casa.jpg');
@@ -70,6 +74,10 @@ body {
     float: left;
     font-size: 24px;
     font-weight: bold
+  }
+
+  .time p {
+ margin-left: 10px;
   }
 }
   
