@@ -62,9 +62,14 @@ body {
     bottom: 0px;
   }
 
+  .life {
+  float: left;
+  }
+
   .time {
+    float: left;
     font-size: 24px;
-    margin-left: 15px;
+    font-weight: bold
   }
 }
   
