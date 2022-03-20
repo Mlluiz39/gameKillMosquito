@@ -57,6 +57,11 @@ body {
     left: 0px;
     bottom: 0px;
   }
+
+  .time {
+    font-size: 15px;
+    margin-left: 5px;
+  }
 }
   
 
