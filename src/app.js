@@ -1,5 +1,16 @@
 let width = window.innerWidth
 let height = window.innerHeight
+let life = 1
+let time = 16
+let level = window.location.search.split('=')[1]
+
+if (level === 'facil') {
+  createsMosquitosTime = 1500
+} else if (level === 'medio') {
+  createsMosquitosTime = 1000
+} else if (level === 'dificil') {
+  createsMosquitosTime = 500
+}
 
 const pickUpHeightAndWidth = () => {
   width = window.innerWidth
@@ -7,10 +18,25 @@ const pickUpHeightAndWidth = () => {
 }
 window.addEventListener('resize', pickUpHeightAndWidth)
 
+const start = setInterval(() => {
+  time -= 1
+  if (time < 0) {
+    clearInterval(start)
+    clearInterval(createsStilt)
+    window.location.href = './victory.html'
+  } else {
+    document.querySelector('[data-js=stopwatch]').innerHTML = time
+  }
+}, 1000)
+
 const randomPosition = () => {
   if (document.querySelector('#fly')) {
     document.querySelector('#fly').remove()
-    document.querySelector('#v1').src = './src/assets/coracao_vazio.png'
+    life > 3
+      ? (window.location.href = './gameover.html')
+      : (document.querySelector(`#v${life}`).src =
+          './src/assets/coracao_vazio.png')
+    life++
   }
 
   let positionX = Math.floor(Math.random() * width) - 90
@@ -37,6 +63,10 @@ const randomPosition = () => {
   })
 }
 
+const createsStilt = setInterval(() => {
+  randomPosition()
+}, createsMosquitosTime)
+
 const randomSize = () => {
   const size = Math.floor(Math.random() * 3)
   switch (size) {
@@ -61,7 +91,3 @@ const sideRandom = () => {
       return 'right'
   }
 }
-
-setInterval(() => {
-  randomPosition()
-}, 1000)
