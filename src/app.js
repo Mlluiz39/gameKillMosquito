@@ -1,7 +1,7 @@
 let width = window.innerWidth
 let height = window.innerHeight
 let life = 1
-let time = 16
+let time = 31
 let level = window.location.search.split('=')[1]
 
 if (level === 'facil') {
@@ -9,7 +9,7 @@ if (level === 'facil') {
 } else if (level === 'medio') {
   createsMosquitosTime = 1000
 } else if (level === 'dificil') {
-  createsMosquitosTime = 500
+  createsMosquitosTime = 750
 }
 
 const pickUpHeightAndWidth = () => {
